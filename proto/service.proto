@@ -13,7 +13,9 @@ service MyService {
     }
 }
 
-message RequestStruct {}
+message RequestStruct {
+  string clientType = 1;
+}
 
 message ResponseStruct {
   string text = 1;
