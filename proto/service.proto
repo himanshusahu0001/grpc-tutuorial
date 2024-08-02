@@ -3,20 +3,20 @@ syntax = "proto3";
 package mypackage;
 
 import "google/api/annotations.proto";
+import "common/common.proto";
 option go_package = "github.com/user/pb";
 
 service MyService {
   rpc GetMessage (RequestStruct) returns (ResponseStruct) {
       option (google.api.http) = {
-          get: "/v1/getmessage"
+          get: "/v1/user/getmessage"
         };
     }
 }
 
-message RequestStruct {
-  string clientType = 1;
-}
+
 
 message ResponseStruct {
-  string text = 1;
+  
 }
+
