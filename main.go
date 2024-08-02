@@ -73,7 +73,7 @@ func main() {
 	}
 
 	grpcClient := pb.NewMyServiceClient(conn)
-	req := &pb.RequestStruct{ClientType: "gRPC"}
+	req := &pb.RequestStruct{ClientType: "gRPC", User:"user"}
 	res, err := grpcClient.GetMessage(context.Background(), req)
 	if err != nil {
 		fmt.Println(err)
@@ -93,4 +93,6 @@ func main() {
 	// ------------------------
 	var toKeepProgramRunning string
 	fmt.Scanln(&toKeepProgramRunning)
+	// sudo netstat -tulpn | grep 808
+
 }
